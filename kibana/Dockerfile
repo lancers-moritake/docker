@@ -10,6 +10,7 @@ RUN wget https://download.elastic.co/kibana/kibana/$KIBANA_PKG_NAME.tar.gz
 RUN tar xvzf $KIBANA_PKG_NAME.tar.gz
 RUN rm -f $KIBANA_PKG_NAME.tar.gz
 RUN mv /$KIBANA_PKG_NAME /kibana
+RUN cp /kibana/config/kibana.yml /kibana/config/kibana.yml.bak
 ADD kibana.yml /kibana/config/
 
 CMD ["/kibana/bin/kibana"]
