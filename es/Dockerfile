@@ -10,7 +10,7 @@ ENV JAVA_HOME /usr/lib/jvm/jre-1.8.0-openjdk.x86_64
 ENV PATH $PATH:$JAVA_HOME/bin
 ENV CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 
-ENV ES_PKG_NAME elasticsearch-1.5.0
+ENV ES_PKG_NAME elasticsearch-1.7.3
 RUN cd /
 RUN wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz
 RUN tar xvzf $ES_PKG_NAME.tar.gz
@@ -19,4 +19,4 @@ RUN mv /$ES_PKG_NAME /elasticsearch
 
 CMD ["/elasticsearch/bin/elasticsearch"]
 
-EXPOSE 9200
+EXPOSE 9200 9300
